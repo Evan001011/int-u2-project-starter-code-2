@@ -1,29 +1,200 @@
-/* The code below centers the text of all h1's on the page. */
-h1 {
-    text-align:center;
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Open Sans', sans-serif;
 }
-
-/* The code below centers all images on the page and gives them a width of 400px. */
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width:400px;
+body {
+background-color: #f0fdf4;
+color: #1a202c;
+line-height: 1.6;
 }
-
-/* The code below centers the text of all h2's on the page. */
-h2 {
-    text-align:center;
+header {
+position: relative;
+background: linear-gradient(135deg, #38a169cc, #2f855acc);
+color: white;
+padding: 2rem 1rem 1.5rem 1rem;
+text-align: center;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+overflow: hidden;
+margin-bottom: 0;
 }
-
-/* The code below aligns all the sections horizontally on the bottom. */
-.section-container {
-    display:flex;
-    justify-content:space-between;
+header h1 {
+font-family: 'Playfair Display', serif;
+font-size: 3rem;
+font-weight: 700;
+letter-spacing: 0.05em;
+margin-bottom: 0.2rem;
+text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+animation: fadeInUp 1.5s ease forwards;
+opacity: 0;
+line-height: 1.1;
 }
-
-/* The code below a solid black border to section and puts space between them (the margin). */
-.section {
-    border: 5px black solid;
-    margin:5px;
+header p {
+font-size: 1.1rem;
+font-weight: 600;
+letter-spacing: 0.03em;
+color: white;
+text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+animation: fadeInUp 1.8s ease forwards;
+opacity: 0;
+line-height: 1.2;
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+nav {
+background-color: #2f855a;
+display: flex;
+justify-content: center;
+padding: 0.75rem;
+flex-wrap: wrap;
+margin-bottom: 2rem;
+}
+.nav-item {
+position: relative;
+margin: 0 1rem;
+color: white;
+cursor: pointer;
+padding: 0.5rem 1rem;
+transition: background-color 0.3s;
+border-radius: 5px;
+}
+.nav-item:hover {
+background-color: #38a169;
+}
+.dropdown {
+display: none;
+position: absolute;
+top: 100%;
+left: -10px;
+background-color: #48bb78;
+padding: 0.5rem 1.5rem;
+border-radius: 10px;
+z-index: 10;
+min-width: 220px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.dropdown a {
+display: block;
+color: white;
+padding: 0.6rem 1rem;
+text-decoration: none;
+transition: background-color 0.3s, border-radius 0.3s;
+border-radius: 12px;
+}
+.dropdown a:hover {
+background-color: #2f855a;
+border-radius: 12px;
+}
+.nav-item:hover .dropdown {
+display: block;
+}
+main {
+max-width: 900px;
+margin: 1.5rem auto 3rem;
+padding: 0 1rem;
+}
+.carousel {
+position: relative;
+overflow: hidden;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+margin-bottom: 2rem;
+}
+.slides {
+display: flex;
+width: 500%;
+transition: transform 0.5s ease-in-out;
+}
+.slide {
+width: 20%;
+flex-shrink: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #e6fffa;
+padding: 2rem;
+text-align: center;
+font-size: 1.1rem;
+font-weight: bold;
+color: #22543d;
+}
+.carousel-indicators {
+position: absolute;
+bottom: 12px;
+width: 100%;
+text-align: center;
+}
+.carousel-indicators span {
+display: inline-block;
+width: 8px;
+height: 8px;
+margin: 0 6px;
+background-color: #a0aec0;
+border-radius: 50%;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+.carousel-indicators span.active {
+background-color: #38a169;
+}
+.image-row {
+display: flex;
+justify-content: space-between;
+gap: 1rem;
+margin-bottom: 2rem;
+}
+.image-row img {
+width: 32%;
+object-fit: cover;
+border-radius: 10px;
+max-height: 250px;
+transition: transform 0.3s ease;
+}
+.image-row img:hover {
+transform: scale(1.1);
+}
+section {
+padding: 1.5rem 0;
+margin-bottom: 1.5rem;
+}
+section h2 {
+color: #2f855a;
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+section ul {
+margin-top: 1rem;
+padding-left: 1.5rem;
+}
+footer {
+background-color: #2f855a;
+color: white;
+text-align: center;
+padding: 1.5rem;
+font-size: 0.9rem;
+}
+.donate-button {
+background-color: #38a169;
+color: white;
+padding: 1rem 2rem;
+border: none;
+border-radius: 30px;
+font-size: 1.1rem;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.2s;
+margin-top: 1.5rem;
+display: inline-block;
+}
+.donate-button:hover {
+background-color: #2f855a;
+transform: scale(1.05);
 }
